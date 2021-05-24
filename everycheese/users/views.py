@@ -10,7 +10,7 @@ from django.views.generic import (
 User = get_user_model()
 
 
-class UserDetailView(LoginRequiredMixin, DetailView):
+class UserDetailView(LoginRequiredMixin, DetailView): 
     model = User
     # These Next Two Lines Tell the View to Index
     #   Lookups by Username
@@ -24,6 +24,7 @@ user_detail_view = UserDetailView.as_view()
 class UserUpdateView(LoginRequiredMixin, UpdateView):
     fields = [
         "name",
+        "bio",
     ]
 
     # We already imported user in the View code above,
