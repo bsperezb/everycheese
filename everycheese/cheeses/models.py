@@ -10,13 +10,13 @@ class Cheese(TimeStampedModel):
     description = models.TextField("Description", blank=True)
 
     class Firmness(models.TextChoices):
-        UNESPECIFIED = "unspecified", "Unspecified"
+        UNSPECIFIED = "unspecified", "Unspecified"
         SOFT = "soft", "Soft"
         SEMI_SOFT = "semi-soft", "Semi-Soft"
         SEMI_HARD = "semi-hard", "Semi-Hard"
         HARD = "hard", "Hard"
 
-    firmness = models.CharField("Firmness", max_length=20, choices=Firmness.choices,)
+    firmness = models.CharField("Firmness", max_length=20, choices=Firmness.choices, default=Firmness.UNSPECIFIED)
     
     #if cheese.firmness == Cheese.Firmness.SOFT:
         #Do podemao hacer mas adelante
