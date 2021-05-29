@@ -9,7 +9,11 @@
     {% if cheese.firmness %}
         <p>Firmness: {{ cheese.get_firmness_display }}</p>       
     {% endif %}
-
+    {% if cheese.country_of_origin %}
+        <p>Country of origin: {{cheese.country_of_origin.name}}
+        <img src="{{ cheese.country_of_origin.flag }}" />
+        </p>
+    {% endif %}
     {% if cheese.description %}
         <p>{{ cheese.description }}</p>
     {% endif %}
