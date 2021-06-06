@@ -8,6 +8,8 @@
             <li><a href="{% url 'cheeses:detail' cheese.slug %}">{{ cheese.name }}</a></li>
         {% endfor %}
     </ul>    
-
-
+<h5>Don't see a cheese liste here?<h5>
+        <a href="{% url 'cheeses:add'%}" class="btn btn-primary" role="button">
+Add Cheese   
+</a>
 {% endblock content %}
