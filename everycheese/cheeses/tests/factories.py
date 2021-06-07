@@ -1,4 +1,5 @@
 from django.template.defaultfilters import slugify
+from everycheese.users.tests.factories import UserFactory
 
 import factory
 import factory.fuzzy
@@ -12,10 +13,9 @@ class CheeseFactory(factory.django.DjangoModelFactory):
         'paragraph', nb_sentences=3, variable_nb_sentences=True
     )
     country_of_origin = factory.Faker('country_code')
-    
+    creator = factory.SubFactory(UserFactory)
     firmness = factory.fuzzy.FuzzyChoice(
         [x[0] for x in Cheese.Firmness.choices]
     )
-    class Meta: 
+    class Meta:
         model = Cheese
-        
