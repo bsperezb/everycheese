@@ -14,7 +14,18 @@
         <img src="{{ cheese.country_of_origin.flag }}" />
         </p>
     {% endif %}
-    {% if cheese.description %}
-        <p>{{ cheese.description }}</p>
+    {% if cheese.description %}                      
+        <p>{{ cheese.description }}</p>              
+    {% endif %}                                      
+    <h3>                                             
+        <a href="{% url 'users:detail' cheese.creator.username %}">
+            {{ cheese.creator.username }}            
+        </a>                                         
+    </h3>
+    {% if cheese.creator.name %}
+        <p>
+            {{ cheese.creator.name }}
+        </p>
     {% endif %}
 {% endblock content %}
+
