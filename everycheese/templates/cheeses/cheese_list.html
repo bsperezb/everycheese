@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 {% block title %}Cheese List{% endblock title %}
 
 {% block content %}
@@ -9,7 +10,9 @@
         {% endfor %}
     </ul>    
 <h5>Don't see a cheese liste here?<h5>
-        <a href="{% url 'cheeses:add'%}" class="btn btn-primary" role="button">
-Add Cheese   
-</a>
+        <div >
+        
+            <a href="{% url 'cheeses:add'  %}" class="btn btn-primary" role="button">Add Cheese</a>
+        
+        </div>
 {% endblock content %}
